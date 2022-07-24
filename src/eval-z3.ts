@@ -40,9 +40,7 @@ function compile(
         return source;
       }
       let sourceText = host.readFile(fileName);
-      let result = sourceText !== undefined ? ts.createSourceFile(fileName, sourceText, languageVersion) : undefined;
-      if (fileName.includes('main')) debugger;
-      return result;
+      return sourceText !== undefined ? ts.createSourceFile(fileName, sourceText, languageVersion) : undefined;
     },
     getDefaultLibFileName: () => 'lib.d.ts',
     getCurrentDirectory: () => '/',
@@ -50,11 +48,7 @@ function compile(
     getCanonicalFileName: fileName => fileName,
     getNewLine: () => '\n',
     useCaseSensitiveFileNames: () => true,
-    fileExists: fileName => {
-      // TODO
-      // console.log('checking', fileName);
-      return false;
-    },
+    fileExists: fileName => false,
     resolveModuleNames,
   };
 
