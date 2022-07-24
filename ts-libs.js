@@ -1,6 +1,9 @@
 // this file defines a map from file names to their contents
 // for all of TypeScripts built-in type definitions (except the DOM)
 // as well as the typedefs for z3-solver
+// you can just run it from node,
+// but because it needs the file system,
+// it has to be run at build time for the web-distributable bundle
 
 'use strict';
 let fs = require('fs');

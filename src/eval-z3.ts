@@ -169,7 +169,7 @@ ${src}
   return compile(sourceFile, updateLineNums);
 }
 
-export async function evalZ3(Z3: Awaited<ReturnType<typeof initZ3>>, src: string): Promise<string> {
+export async function evalZ3JS(Z3: Awaited<ReturnType<typeof initZ3>>, src: string): Promise<string> {
   let result = compileZ3JS(src);
   if (!result.success) {
     return Promise.reject(new Error(result.message));
@@ -183,7 +183,5 @@ export async function evalZ3(Z3: Awaited<ReturnType<typeof initZ3>>, src: string
   return module.exports;
 })
   `;
-  let out = await (0, eval)(wrapped)(Z3.Context('main'));
-  Z3.em.PThread.terminateAllThreads();
-  return out;
+  return await (0, eval)(wrapped)(Z3.Context('main'));
 }
