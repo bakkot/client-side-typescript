@@ -1,0 +1,15 @@
+{
+    "include": ["src/*.ts"],
+    "compilerOptions": {
+        "target": "es2019",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "strict": true,
+        "importsNotUsedAsValues": "error",
+        "outDir": "dist",
+        "lib": ["es5", "es2019", "dom", "dom.iterable"],
+        "typeRoots": [
+            "node_modules/@types"
+        ]
+    }
+}
