@@ -5,6 +5,7 @@
   "dependencies": {
     "dts-minify": "^0.3.0",
     "esbuild": "^0.14.49",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "z3-solver": "^4.10.1"
   }
 }
